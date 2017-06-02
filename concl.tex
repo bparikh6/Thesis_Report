@@ -1,0 +1,16 @@
+%chapter{Conclusion and Future work}
+%\label{chap:6}
+
+\section{Conclusion}
+In this research, design, and implementation of proposed Application Layer Forward Error Correction based User Datagram Protocol (ALFEC--UDP) has been done. Raptor code, a fountain forward error correction paradigm was integrated into application layer of UDP to provide reliability for data transport in high bandwidth networks. Analysis of ALFEC--UDP was performed by comparing it with high bandwidth TCP variants.
+%we investigated recently proposed most efficient fountain erasure code, raptor code and integrated it to achieve reliability in high bandwidth network environment applying it on an unreliable protocol UDP.
+In order to practically evaluate the performance of designed ALFEC--UDP, the bounds of overhead packets required to send at a rateless scheme with large data sizes to achieve reliability using different loss rate models was performed. After investigating the scenarios, we compared its realistic results with TCP versions and found the performance of ALFEC--UDP to be better than that of current high bandwidth TCP variants based on average data transport completion time. Moreover, we were able to find out that ALFEC--UDP even worked better in lossy environments. The results demonstrated that performance of ALFEC--UDP was independent to the loss and delay in high bandwidth networks. 
+\newpage
+\section{Future Work}
+The design and analysis of ALFEC--UDP shows the scope:
+\begin{itemize}
+\item To implement and evaluate ALFEC--UDP into more complex network topology with large data sizes
+\item To extend ALFEC--UDP into real Internet infrastructure and evaluate its performance
+\item To implement the protocol in multipath applications, where many transmitters transmits data to a receiver in order to exploit the network resources to its maximum extent.
+
+\end{itemize}

@@ -1,0 +1,271 @@
+% Set margins.
+% The strange margin numbers are a result of the particular printer
+% used.  Modify as necessary.  The "desired" margins are included in
+% %{}
+\setlength{\oddsidemargin}{0.5in}
+\setlength{\evensidemargin}{0.5in}
+\setlength{\textwidth}{5.75in}  %{5.75in}
+\setlength{\topmargin}{0.125in}  %{0.25in}
+\setlength{\headheight}{0in}
+\setlength{\headsep}{0in}
+\setlength{\textheight}{8.625in}  %{8.75in}
+\setlength{\footskip}{0.3in}
+
+% Set tab stop for indent.
+\setlength{\parindent}{0.5in}
+
+% Limit maximum fraction of page used by figures.
+\renewcommand{\floatpagefraction}{0.75}
+
+%\newcommand{\PreserveBackslash[1]{\let\temp=\\#1\let\\=\temp}
+
+% Prevent widow and orphan lines.
+\widowpenalty=10000
+\clubpenalty=10000
+
+\newcommand{\thesistitle}{RELIABLE DATA TRANSPORT IN HIGH BANDWIDTH NETWORKS USING FOUNTAIN CODE}
+\newcommand{\THESISTITLE}{RELIABLE DATA TRANSPORT IN HIGH BANDWIDTH NETWORKS USING FOUNTAIN CODE}
+\newcommand{\thesisauthor}{BHUMIKA PARIKH}
+\newcommand{\THESISAUTHOR}{BHUMIKA PARIKH}
+\newcommand{\thesisauthorpreviousdegrees}{B.Tech}
+\newcommand{\thesisdegree}{Master of Sciences}
+\newcommand{\thesismonth}{May}
+\newcommand{\thesisyear}{2017}
+\newcommand{\graduateschooldean}{Dr. Louis Reyes}
+\newcommand{\thesisadvisor}{Dr. Satyajayant Misra}  
+\newcommand{\committeea}{Dr. David Mitchell}
+\newcommand{\committeeb}{Dr. Jonathan Cook}
+
+
+
+% Title Page
+\newcommand{\thesistitlepage}{
+     \pagenumbering{roman}
+     \thispagestyle{empty}
+     \begin{spacing}{2}
+     \centering
+          \THESISTITLE\\[0.5in]
+          BY\\
+          \THESISAUTHOR, \thesisauthorpreviousdegrees\\[1.666in]
+          A thesis submitted to the Graduate School\\
+          in partial fulfillment of the requirements\\
+          for the degree\\
+          \thesisdegree, Arts \& Science\\[.5in]
+          Major Subject: Computer Science\\[.5in]
+          New Mexico State University\\
+          Las Cruces, New Mexico\\
+          \thesismonth~\thesisyear\\
+          Copyright \copyright\ 2017 by Bhumika Parikh
+     \end{spacing}
+     \newpage
+}
+
+% Approval Page
+\newcommand{\thesisapprovalpage}{
+     \pagestyle{plain}
+     \begin{spacing}{2}
+         \noindent ``\thesistitle," a dissertation prepared by \thesisauthor~in
+          partial fulfillment of the requirements for the degree,
+          \thesisdegree ~has been approved and accepted by the following:
+     \end{spacing}
+      \vspace{0.666in}
+     \begin{spacing}{1}
+         \noindent \makebox[\textwidth]\hrulefill \\
+        \graduateschooldean \\
+          Dean of the Graduate School\\[1.0in]
+          \noindent \makebox[\textwidth]\hrulefill \\
+%          \noDrthesisadvisor \\
+          Chair of the Examining Committee\\[1.0in]
+          \noindent \makebox[\textwidth]\hrulefill \\
+          Date{}\\[0.5in]
+     \end{spacing}
+     \begin{spacing}{1}
+     \noindent Committee in charge:\\[.25in]
+     \indent \thesisadvisor, Associate Professor, Chair.\\[.15in]
+     \indent \committeea, Assistant Professor. \\[.15in]
+     \indent \committeeb, Professor \& Interim Department Head. \\[.15in]
+     \end{spacing}
+     \newpage
+}
+
+% Dedication Page
+\newcommand{\thesisdedicationpage}{
+     \begin{center}
+          DEDICATION
+     \end{center}
+     \vspace{0.333in}
+     \begin{spacing}{2}
+          \indent \input{dedication.tex}
+     \end{spacing}
+     \newpage
+}
+
+% Acknowledgments Page
+\newcommand{\thesisacknowledgmentspage}{
+     \begin{center}
+          ACKNOWLEDGMENTS
+     \end{center}
+     \vspace{0.333in}
+     \begin{spacing}{2}
+          \indent \input{acknowledgments.tex}
+     \end{spacing}
+     \newpage
+}
+
+% VITA Page
+\newcommand{\thesisvitapage}{
+     \begin{spacing}{1}
+     \input{vita.tex}
+     \end{spacing}
+     \newpage
+}
+
+% Abstract
+\newcommand{\thesisabstract}{
+     \begin{center}
+          ABSTRACT\\[0.333in]
+          \THESISTITLE\\[0.333in]
+          \begin{spacing}{2}
+          BY\\
+          \THESISAUTHOR, \thesisauthorpreviousdegrees\\[0.333in]
+           \thesisdegree, Arts \& Science\\
+           Specialization in Computer Science\\
+          New Mexico State University\\
+          Las Cruces, New Mexico, \thesisyear\\
+          \thesisadvisor, Chair \\         
+          
+         \end{spacing}
+     \end{center}
+     \indent \input{abstract.tex}
+     \newpage
+}
+
+%Acronyms
+
+
+%% Table of Contents
+\renewcommand{\contentsname}{\normalsize{TABLE OF CONTENTS}}
+\renewcommand\tableofcontents{%
+    \chapter*{\contentsname
+        \@mkboth{\uppercase{\contentsname}}{\uppercase{\contentsname}}}%
+    \setlength{\parskip}{2ex}  % added by Steve C.
+    \begin{spacing}{1}  % mod by Cam to tighten up the TOC
+    \@starttoc{toc}%
+    \end{spacing}  % mod by Cam to reset spacing
+    \setlength{\parskip}{0ex}  % added by Steve C.
+    \newpage
+    }
+    
+
+%\renewcommand{\listtablename}{LIST OF TABLES}
+%\renewcommand\listoftables{%
+%    \chapter*{\normalsize{\listtablename}
+ %     \@mkboth{\uppercase{\listtablename}}{\uppercase{\listtablename}}}%
+%    \addcontentsline{toc}{chapter}{\listtablename}
+%    \setlength{\parskip}{2ex}  % added by Steve C.
+%    \begin{spacing}{1}  % mod by Cam to tighten up the LOT
+%    \@starttoc{lot}%
+%    \end{spacing}  % mod by Cam to reset spacing
+%    \setlength{\parskip}{0ex}  % added by Steve C.
+%    \newpage
+%    }
+
+
+\renewcommand{\listfigurename}{LIST OF FIGURES}
+\renewcommand\listoffigures{%
+    \chapter*{\normalsize{\listfigurename}
+      \@mkboth{\uppercase{\listfigurename}}%
+              {\uppercase{\listfigurename}}}%
+    \addcontentsline{toc}{chapter}{\listfigurename}
+%    \addtocontents{toc}{Chapter}%Wiplove
+    \setlength{\parskip}{2ex}  % added by Steve C.
+    \begin{spacing}{1}  % mod by Cam to tighten up the LOF
+    \@starttoc{lof}%
+    \end{spacing}  % mod by Cam to reset spacing
+    \setlength{\parskip}{0ex}  % added by Steve C.
+    \newpage
+    }
+
+% Chapter formatting
+%\renewcommand{\chapter}{\@startsection
+%     {chapter}
+%     {0}
+%     {-0.5in}
+%     {0in}
+%     {0.01in}
+%     %{\textbf \normalsize}
+%     {\textbf}
+%}
+\renewcommand{\@makechapterhead}[1]{%
+  \vspace*{40pt}%
+  {\parindent \z@ \raggedright \normalfont\bfseries
+    \interlinepenalty\@M
+    {%\singlespace
+     \@chapapp\space \thechapter
+     \par %\nobreak
+     \vskip 20\p@
+     %\interlinepenalty\@M
+     #1\par
+    }%
+    \nobreak
+    \vskip 20\p@
+  }}
+
+\renewcommand{\section}{\@startsection
+     {section}
+     {1}
+     {-0.5in}
+     {0in}
+     {0.01in}
+     %{\textbf \normalsize}
+     {\textbf}
+}
+\renewcommand{\subsection}{\@startsection
+     {subsection}
+     {2}
+     {-0.5in}
+     {0in}
+     {0.01in}
+     %{\textbf \normalsize}
+     {\textbf}
+}
+\renewcommand{\subsubsection}{\@startsection
+     {subsubsection}
+     {3}
+     {-0.5in}
+     {0in}
+     {0.01in}
+     %{\textbf \normalsize}
+     {\textbf}
+}
+% Appendix
+%\renewcommand\appendixname{APPENDIX}
+
+% References
+
+%\renewcommand\bibname{REFERENCES}%\vspace{0.1667in}}
+
+
+\renewcommand{\bibname}{\normalsize{REFERENCES}}
+
+\ifx\undefined\selectfont
+\def\@setsize#1#2#3#4{\@nomath#1
+   \let\@currsize#1\baselineskip
+   #2\baselineskip\baselinestretch\baselineskip
+   \parskip\baselinestretch\parskip
+   \setbox\strutbox\hbox{\vrule height.7\baselineskip
+      depth.3\baselineskip width\z@}
+   \normalbaselineskip\baselineskip#3#4}
+\else
+\def\@newbaseline{%
+    \ifx\undefined\setnew@baselineskip
+      \baselineskip\f@baselineskip\relax
+    \else
+      \setnew@baselineskip
+    \fi
+    \baselineskip\baselinestretch\baselineskip
+    \setbox\strutbox\hbox{\vrule\@height.7\baselineskip
+    \@depth.3\baselineskip \@width\z@}%
+    \normalbaselineskip\baselineskip}
+\fi
+

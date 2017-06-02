@@ -1,0 +1,52 @@
+%\chapter{Literature Review}
+
+In this chapter, a literature review of UDP and rapidly evolving Raptor Codes is being discussed with a view of revealing what have been achieved in recent years by the researchers.
+%Introduction to wired communications related to UDP
+%UDP and its research on error correction and reliability
+%Raptor Codes and its research work
+\section{User Datagram Protocol}
+The UDP, a transport layer protocol, relies on connectionless communication mechanism which does not establish any connection before sending the packets. Its packets typically include a header, containing source and destination address information, the length of the payload, checksum, as well as a payload (the actual application data). The purpose of the checksum is to detect errors in the transmitted packets. UDP simply sends the packets with high speed into the network. It is faster than TCP because there is no flow control, error checking, error correction, or acknowledgment. The only cause of erasures in the packets is because of the collision in the network.
+\par
+The UDP protocol only employs a cyclic redundancy check (CRC) to verify the integrity of packets, in a known manner. This mechanism can detect erasures either in header or payload and discard the packet if an error is detected. When a packet fails to arrive before its processing time, the UDP protocol declares the packet as lost. Therefore, at the receiving host, packets are either perfect or completely lost.
+\par
+UDP does not perform well since there is no form of error correction mechanism other than CRC. Large packet losses and underutilization of link bandwidth are still present in the network packet communication. Without any good error correction mechanism, high throughput and moderate latency that is required for real-time applications would not be achieved. Within last decade some intense research is going on into deploying error correction in UDP by various researchers.
+\par
+Chen et al.,\cite{chen2005hybrid} in their work developed a novel hybrid protocol. The two transmission protocols used were UDP and TCP along with FEC for approaching to the problem of packet loss. In their study, they found that delay introduced at the point of establishing the connection was too high. Furthermore, the introduction of UDP completely removed congestion control, giving rise to huge packet drops and with the introduction of TCP the bandwidth usage was increased. The authors also found that TCP behaved poorly even when congestion control was disabled and FEC required huge overhead for correcting errors in the communication.
+\par
+%Similarly, Long et al. \cite{long2010performance} proposed Reliable UDP (RDBUDP) that aimed at improving the performance of UDP. RDBUDP transmits control information using TCP protocol and data transmission using UDP protocol. The performance is evaluated in terms of network throughput and delay. However, in their approach the receiver received the packets until its reserved buffer size is full, and later drop packets. This led to large amount of packet loss.
+\par
+%Zheng et al., \cite{zheng2001improved} proposed a Complete User Datagram Protocol (CUDP) which recovered the packet level error by obtaining information from physical and link layer. The authors modified the protocol stack in which the physical and link layer communicated bi-directionally with each other. It performs well by obtaining information from the corrupted frame, but as the congestion packet loss rate grows, the advantages of CUDP diminishes.
+\par
+UDP being an unreliable transport protocol, attempt to introduce retransmission of lost packets take a long time when retransmissions are ignored. FEC is proposed due to this resilience of the packets in which redundancy reduces the packet loss. Despite this, uncontrolled use of redundancy leads to high bandwidth utilization. Thus, Johanson \cite{johanson2003adaptive} proposed an adaptive FEC scheme, using Reed-Solomon (RS) erasure coding and receiver feedback. This scheme limits the bandwidth utilization by adapting to the packet video size. But, for a larger encoded frame size, the utilization of the bandwidth is increased when the feedback receiver is introduced.
+\par
+While most of the research focused their attention on implementing the features of TCP like retransmissions of lost packets, introducing feedback; in this study, raptor codes were implemented to an application layer FEC in order to improve the performance of UDP.
+
+\section{Raptor codes}
+
+Raptor FEC is an erasure correction technology, capable of correcting the missing or lost data without the need of retransmission from the sender. The versatility of raptor codes is evident in that as it constitutes an efficient rateless code which provides a near-Shannon performance. These codes have been proposed to provide reliability for a variety of data delivery applications.
+
+Shokrollahi \cite{shokrollahi2009theory} described the evaluation of raptor codes compared to other fixed rate fountain codes. In his work, he explains the discovery of Luby Transform (LT) codes. But compared to raptor code, LT codes did not provide the linear time encoding and decoding. After the invention of raptor codes on BEC, research was carried out by him on the application of raptor codes on packet based transport, Binary Symmetric Channel (BSC) and Additive White Gaussian Noise Channel (AWGC) \cite{sturley1953radio}.
+
+Digital fountain codes were used for file distribution over the wireless broadcast networks \cite{luby2007reliable}. The ideal ability to recover the loss, requiring low computational complexity and fountain codes flexibility made additional means of a reliability of using raptor codes for delivering large file sizes simultaneously without feedback by many users over unreliable and bandwidth-limited networks. 
+
+Kim et al.,\cite{kim2008performance} in their research compared the Reed-Solomon (RS) code at the link layer and raptor code at the application layer in the burst mode transmission to support reliable transport for Internet Protocol television (IPTV). The Maximum Likelihood (ML) decoding based on Gaussian Elimination (GE) algorithm ensured that multimedia broadcasting is possible with more speed and reliability. Packet loss during the packet based transport is well modeled by the Binary Erasure Channel (BEC) was proved by their research.
+
+Luby et al., \cite{luby2006raptor} address reliable file delivery over mobile broadcast networks, concentrating on the raptor codes, as specified in MBMS and 3GPP. When compare to LT and raptor codes, their research concluded raptor provided low encoding and decoding complexity. The guidelines for the efficient functioning of encoding and decoding along with results is shown in their research. Luby et al., \cite{luby2007high} in his another research confirm that Application Layer FEC (ALFEC), based on raptor code on the top of IP provides reliability to packets sent during the network transmission in the Internet communication. 
+ 
+Thomas et al., \cite{stockhammer2008application} incorporated ALFEC into the Content Delivery Protocol (CDP) and proved that mobile communication system ensured reliability in delivery of content together supporting channel efficiency, low complexity, and flexibility.
+
+The idea of replacing congestion control with fountain code, raptor, was also proposed by Moln$\grave{a}$r, S$\grave{a}$ndor, et al., \cite{molnar2013data}. They implemented a novel transport protocol which uses TCP for data transfer without congestion control and showed its goodput performance is better than current TCP variants in a wide range of packet loss rates and round-trip delays environment.
+
+In conclusion, the available research work suggests that raptor codes have wide range of applications in network communication. The use of raptor codes has been implemented to all channels, offering platform for both streaming and file downloading services. Also, most of the research has augmented raptor codes in TCP and UDP. In this work, sn emphasis is placed on implementing raptor codes on UDP as an ALFEC-UDP.
+
+
+%UDP provides a minimal, unreliable, best-effort, message passing transport to applications and upper-layer protocols. When compared to TCP, UDP is used primarily for establishing low-latency and loss tolerating connections between applications on the Internet. 
+\par
+%TCP detects congestion in the network, checks for lost packets, reorders and retransmits them which comes at a cost in terms of additional overhead, and delays called latency. Unlike TCP, UDP just sends the packets without providing any additional reliability and connection oriented services, which means it has much lower bandwidth overhead and latency. The individual packets can traverse through different paths between sender and receiver, causing lost or out of order delivery of the packets.
+\par
+%In this design, we choose UDP as transport protocol since it does not incur connection establishment and tear down overheads. UDP also avoids retransmissions and reordering of the packets, which is an added advantage, as Raptor FEC code does not require retransmissions in the network communication. UDP does not maintain a congestion window for data transfer. Raptor FEC also does not worry about the congestion in the network, since the knowledge of any encoded symbols of slightly larger size than original symbols helps in reconstructing the original data. 
+\par
+%To incorporate reliable data transfer we design a FC--UDP protocol so that the data is accepted at one end of the link without overwhelming the available resources at the other end.
+
+
+

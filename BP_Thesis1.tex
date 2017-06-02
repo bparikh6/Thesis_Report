@@ -1,0 +1,136 @@
+%% PREAMBLE
+\documentclass[12pt,letterpaper]{report}
+\usepackage{nmsu_thesis_style}
+%\usepackage[dvips]{graphicx}
+\usepackage{subfigure}
+%\usepackage[square, comma, sort&compress]{natbib}
+%for matlab
+
+\usepackage{moreverb}                % including code and line numbering
+\usepackage{textcomp}
+
+
+\usepackage{setspace} % spacing environment
+\usepackage[pdftex,final]{graphicx}  % graphics (PDFTeX)
+\usepackage[pdftex,colorlinks=false,urlcolor=blue,plainpages=false]{hyperref}
+%\usepackage{psfig}
+%\usepackage{epsfig}
+\usepackage{supertabular}            % multipage tables
+\usepackage{tabularx}                % tables with auto-width columns etc
+\usepackage{fancyhdr}                % running headers and footers
+\usepackage{amssymb}                 % extra math symbols
+\usepackage{textcomp}
+%\usepackage{fixltx2e}
+\usepackage{csquotes}
+\usepackage{amsmath}
+\usepackage{algorithm}
+\usepackage[noend]{algpseudocode}
+\usepackage{textgreek}
+\usepackage{accents}
+\usepackage{todonotes}
+
+%\usepackage{math}
+
+
+%\usepackage{url}
+%\newcommand{\urlBiBTeX}[1]{\url{#1}}
+
+% List of Theorems
+\newtheorem{f2cprop}{Theorem}
+\newtheorem{c2fprop}[f2cprop]{Theorem}
+
+% Fix hyphenation here
+\hyphenation{wave-let in-fra-struc-ture Comm-Access}
+\def\fighome{fig/}
+\footnotesep \baselineskip
+
+\renewcommand\floatpagefraction{.9}
+\renewcommand\textfraction{.1}
+\renewcommand\topfraction{.9}
+\renewcommand\bottomfraction{.9}
+
+% BEGINNING OF DOCUMENT
+\begin{document}
+\doublespacing
+\title{Thesis_report_ver1}
+
+\thesistitlepage
+\thesisapprovalpage
+\thesisdedicationpage
+\thesisacknowledgmentspage
+\thesisvitapage  % assumes the presence of a vita.tex file
+\thesisabstract
+\doublespacing
+\tableofcontents
+
+%\listoftables
+\listoffigures
+
+\pagenumbering{arabic}
+
+\clearpage
+\chapter{\normalsize INTRODUCTION}
+\label{chap:1}
+\input{chap1.tex}
+
+\clearpage
+\chapter{\normalsize LITERATURE REVIEW}
+\label{chap:2}
+\input{chap2.tex}
+
+\clearpage
+\chapter{\normalsize RAPTOR CODES}
+\label{chap:3}
+\input{chap3.tex}
+
+\clearpage
+\chapter{\normalsize DESIGN METHODOLOGY}
+\label{chap:4}
+\input{chap4.tex}
+
+\clearpage
+\chapter{\normalsize SIMULATION AND RESULTS}
+\label{chap:5}
+\input{chap5.tex}
+
+\clearpage
+\chapter{\normalsize CONCLUSION AND FUTURE WORK}
+\label{chap:6}
+\input{concl.tex}
+
+\clearpage
+
+%------------------------------------------------------------------
+
+ \appendix
+
+ %\clearpage
+ %\addcontentsline{toc}{chapter}{APPENDICES}
+ %\thispagestyle{empty}
+ %\textbf{APPENDICES} \\
+
+%
+
+ 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\clearpage
+ \newpage
+
+ \setcounter{equation}{0}  \setcounter{table}{0}  \setcounter{subsection}{0}
+ \renewcommand{\thefigure}{A.\arabic{figure}}
+ \renewcommand{\thechapter}{A}%.\arabic{chapter}}
+
+
+ \clearpage
+\addcontentsline{toc}{chapter}{REFERENCES}
+% \begin{center}
+ %\vspace*{3.0in}
+% \thispagestyle{empty}
+ %\textbf{REFERENCES} \\
+ %\end{center}
+\bibliographystyle{plain}
+\bibliography{Ref_Thesis1}
+
+
+\end{document}
